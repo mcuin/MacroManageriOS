@@ -14,6 +14,7 @@
 		DB08E8E51F51C7F7007EC05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E31F51C7F7007EC05D /* LaunchScreen.storyboard */; };
 		DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */; };
 		DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */; };
+		DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DB08E8E61F51C7F7007EC05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
+		DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightMeasurementTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				DB08E8E61F51C7F7007EC05D /* Info.plist */,
 				DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */,
 				DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */,
+				DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */,
 			);
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB08E8DD1F51C7F7007EC05D /* DailyIntakeViewController.swift in Sources */,
+				DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */,
 				DB08E8DB1F51C7F7007EC05D /* AppDelegate.swift in Sources */,
 				DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */,
 				DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */,

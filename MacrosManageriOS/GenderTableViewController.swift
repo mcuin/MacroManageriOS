@@ -81,7 +81,6 @@ class GenderTableViewController: UITableViewController {
         }
         
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
