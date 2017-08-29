@@ -15,6 +15,7 @@
 		DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */; };
 		DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */; };
 		DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */; };
+		DBB7C2CE1F55D8830039E7C5 /* HeightMeasurementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2CD1F55D8830039E7C5 /* HeightMeasurementTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
 		DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightMeasurementTableView.swift; sourceTree = "<group>"; };
+		DBB7C2CD1F55D8830039E7C5 /* HeightMeasurementTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightMeasurementTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */,
 				DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */,
 				DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */,
+				DBB7C2CD1F55D8830039E7C5 /* HeightMeasurementTableView.swift */,
 			);
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */,
 				DB08E8DB1F51C7F7007EC05D /* AppDelegate.swift in Sources */,
 				DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */,
+				DBB7C2CE1F55D8830039E7C5 /* HeightMeasurementTableView.swift in Sources */,
 				DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

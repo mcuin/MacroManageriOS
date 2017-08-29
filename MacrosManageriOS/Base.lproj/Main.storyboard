@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="3889" y="216"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Height Measurement Table View-->
         <scene sceneID="jPY-Tm-wSg">
             <objects>
-                <tableViewController id="ngO-uu-rbU" sceneMemberID="viewController">
+                <tableViewController id="ngO-uu-rbU" customClass="HeightMeasurementTableView" customModule="MacrosManageriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="qmi-IV-exI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,6 +197,9 @@
                             <outlet property="delegate" destination="ngO-uu-rbU" id="74q-Mw-f1y"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="heightMeasurementTableView" destination="qmi-IV-exI" id="aRY-js-UB3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnf-jE-MII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
