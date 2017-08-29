@@ -126,10 +126,10 @@
             </objects>
             <point key="canvasLocation" x="2678" y="510"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Gender Table View Controller-->
         <scene sceneID="8bk-Sc-yXn">
             <objects>
-                <tableViewController id="YBY-b8-Ska" sceneMemberID="viewController">
+                <tableViewController id="YBY-b8-Ska" customClass="GenderTableViewController" customModule="MacrosManageriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="gLu-VD-dQS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,6 +149,9 @@
                             <outlet property="delegate" destination="YBY-b8-Ska" id="f5B-A4-6el"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="genderTableView" destination="gLu-VD-dQS" id="jEm-ue-BVh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leF-Gi-Xpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +211,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vad-dk-E6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3886" y="911"/>
+            <point key="canvasLocation" x="3889" y="973"/>
         </scene>
     </scenes>
 </document>

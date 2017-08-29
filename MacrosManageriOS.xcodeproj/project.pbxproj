@@ -13,6 +13,7 @@
 		DB08E8E21F51C7F7007EC05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E11F51C7F7007EC05D /* Assets.xcassets */; };
 		DB08E8E51F51C7F7007EC05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E31F51C7F7007EC05D /* LaunchScreen.storyboard */; };
 		DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */; };
+		DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DB08E8E41F51C7F7007EC05D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB08E8E61F51C7F7007EC05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DB08E8E31F51C7F7007EC05D /* LaunchScreen.storyboard */,
 				DB08E8E61F51C7F7007EC05D /* Info.plist */,
 				DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */,
+				DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */,
 			);
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				DB08E8DD1F51C7F7007EC05D /* DailyIntakeViewController.swift in Sources */,
 				DB08E8DB1F51C7F7007EC05D /* AppDelegate.swift in Sources */,
+				DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */,
 				DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
