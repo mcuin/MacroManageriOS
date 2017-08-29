@@ -24,18 +24,25 @@ class GenderTableViewController: UITableViewController {
         
         super.viewWillAppear(animated)
         
-        switch UserDefaults.standard.value(forKey: "gender") as! String {
-        case "female":
-            
-            let index = IndexPath(row: 0, section: 0)
-            genderTableView.selectRow(at: index, animated: true, scrollPosition: .none)
-            tableView(genderTableView, didSelectRowAt: index)
-        case "male":
-            
-            let index = IndexPath(row: 1, section: 0)
-            genderTableView.selectRow(at: index, animated: true, scrollPosition: .none)
-            tableView(genderTableView, didSelectRowAt: index)
-        default:
+        if let gender = UserDefaults.standard.value(forKey: "gender") as? String {
+            switch gender {
+            case "female":
+                
+                let index = IndexPath(row: 0, section: 0)
+                genderTableView.selectRow(at: index, animated: true, scrollPosition: .none)
+                tableView(genderTableView, didSelectRowAt: index)
+            case "male":
+                
+                let index = IndexPath(row: 1, section: 0)
+                genderTableView.selectRow(at: index, animated: true, scrollPosition: .none)
+                tableView(genderTableView, didSelectRowAt: index)
+            default:
+                
+                let index = IndexPath(row: 0, section: 0)
+                genderTableView.selectRow(at: index, animated: true, scrollPosition: .none)
+                tableView(genderTableView, didSelectRowAt: index)
+            }
+        } else {
             
             let index = IndexPath(row: 0, section: 0)
             genderTableView.selectRow(at: index, animated: true, scrollPosition: .none)
