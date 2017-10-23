@@ -23,7 +23,7 @@ class HeightMeasurementTableView: UITableViewController {
         
         super.viewWillAppear(animated)
         
-        if let heightMeasurement = UserDefaults.standard.value(forKey: "heightMeasurement") as? String {
+        if let heightMeasurement = UserDefaults.standard.value(forKey: "heightMeasure") as? String {
             
             switch heightMeasurement {
             case "imperial":
@@ -65,7 +65,7 @@ class HeightMeasurementTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "heightMeasurementCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "heightMeasureCell")
         
         cell?.textLabel?.text = heightMeasurementArray[indexPath.row]
         
@@ -77,11 +77,11 @@ class HeightMeasurementTableView: UITableViewController {
         switch indexPath.row {
         case 0:
             
-            UserDefaults.standard.set("imperial", forKey: "heightMeasurement")
+            UserDefaults.standard.set("imperial", forKey: "heightMeasure")
         case 1:
-            UserDefaults.standard.set("metric", forKey: "heightMeasurement")
+            UserDefaults.standard.set("metric", forKey: "heightMeasure")
         default:
-            UserDefaults.standard.set("imperial", forKey: "heightMeasurement")
+            UserDefaults.standard.set("imperial", forKey: "heightMeasure")
         }
         
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
@@ -91,4 +91,5 @@ class HeightMeasurementTableView: UITableViewController {
         
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
+    
 }

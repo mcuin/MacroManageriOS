@@ -12,10 +12,15 @@
 		DB08E8E01F51C7F7007EC05D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8DE1F51C7F7007EC05D /* Main.storyboard */; };
 		DB08E8E21F51C7F7007EC05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E11F51C7F7007EC05D /* Assets.xcassets */; };
 		DB08E8E51F51C7F7007EC05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E31F51C7F7007EC05D /* LaunchScreen.storyboard */; };
+		DB92742B1F7EB7E700165DF0 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */; };
 		DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */; };
 		DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */; };
 		DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */; };
 		DBB7C2CE1F55D8830039E7C5 /* HeightMeasurementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2CD1F55D8830039E7C5 /* HeightMeasurementTableView.swift */; };
+		DBC9E72A1F7EA5250020FD72 /* BirthDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC9E7291F7EA5250020FD72 /* BirthDatePickerViewController.swift */; };
+		DBDC1CC71F968093003FE3DD /* DailyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC1CC61F968093003FE3DD /* DailyActivityTableViewController.swift */; };
+		DBDC1CC91F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */; };
+		DBDC1CCB1F9680BF003FE3DD /* GoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +31,15 @@
 		DB08E8E11F51C7F7007EC05D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB08E8E41F51C7F7007EC05D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB08E8E61F51C7F7007EC05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
 		DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightMeasurementTableView.swift; sourceTree = "<group>"; };
 		DBB7C2CD1F55D8830039E7C5 /* HeightMeasurementTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightMeasurementTableView.swift; sourceTree = "<group>"; };
+		DBC9E7291F7EA5250020FD72 /* BirthDatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePickerViewController.swift; sourceTree = "<group>"; };
+		DBDC1CC61F968093003FE3DD /* DailyActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyActivityTableViewController.swift; sourceTree = "<group>"; };
+		DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivityLifestyleTableViewController.swift; sourceTree = "<group>"; };
+		DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,11 @@
 				DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */,
 				DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */,
 				DBB7C2CD1F55D8830039E7C5 /* HeightMeasurementTableView.swift */,
+				DBC9E7291F7EA5250020FD72 /* BirthDatePickerViewController.swift */,
+				DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */,
+				DBDC1CC61F968093003FE3DD /* DailyActivityTableViewController.swift */,
+				DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */,
+				DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */,
 			);
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
@@ -103,12 +118,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Mykal Cuin";
 				TargetAttributes = {
 					DB08E8D61F51C7F7007EC05D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = VG3AW43EZ3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -149,9 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDC1CC71F968093003FE3DD /* DailyActivityTableViewController.swift in Sources */,
+				DBDC1CC91F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift in Sources */,
 				DB08E8DD1F51C7F7007EC05D /* DailyIntakeViewController.swift in Sources */,
+				DBDC1CCB1F9680BF003FE3DD /* GoalTableViewController.swift in Sources */,
 				DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */,
+				DB92742B1F7EB7E700165DF0 /* CalculatorViewController.swift in Sources */,
 				DB08E8DB1F51C7F7007EC05D /* AppDelegate.swift in Sources */,
+				DBC9E72A1F7EA5250020FD72 /* BirthDatePickerViewController.swift in Sources */,
 				DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */,
 				DBB7C2CE1F55D8830039E7C5 /* HeightMeasurementTableView.swift in Sources */,
 				DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */,
@@ -190,7 +211,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -198,7 +221,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -241,7 +268,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -249,7 +278,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -285,7 +318,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cuin.MacrosManageriOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -299,7 +333,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cuin.MacrosManageriOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

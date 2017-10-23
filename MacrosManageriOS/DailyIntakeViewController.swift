@@ -32,7 +32,11 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
         switch item {
-        case (tabBar.items?[2])!:
+            
+        case (tabBar.items![1]):
+            
+            self.performSegue(withIdentifier: "goto_calculator", sender: self)
+        case (tabBar.items![2]):
             
             self.performSegue(withIdentifier: "goto_settings", sender: self)
         default:
