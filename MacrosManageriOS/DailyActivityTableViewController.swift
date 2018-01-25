@@ -32,6 +32,34 @@ class DailyActivityTableViewController: UITableViewController {
         
         dailyActivityLevelTableView.delegate = self
         dailyActivityLevelTableView.dataSource = self
+        
+        if let selection = UserDefaults.standard.value(forKey: "dailyActivityLevel") as? String {
+            print(selection)
+            switch selection {
+                
+            case "veryLight":
+                
+                dailyActivityLevelTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .none)
+            case "light":
+                
+                dailyActivityLevelTableView.selectRow(at: IndexPath(row: 1, section: 0), animated: false, scrollPosition: .none)
+            case "moderate":
+                
+                dailyActivityLevelTableView.selectRow(at: IndexPath(row: 2, section: 0), animated: false, scrollPosition: .none)
+            case "heavy":
+                
+                dailyActivityLevelTableView.selectRow(at: IndexPath(row: 3, section: 0), animated: false, scrollPosition: .none)
+            case "veryHeavy":
+                
+                dailyActivityLevelTableView.selectRow(at: IndexPath(row: 4, section: 0), animated: false, scrollPosition: .none)
+            default:
+                
+                dailyActivityLevelTableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .none)
+            }
+        } else {
+            
+            
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,6 +79,13 @@ class DailyActivityTableViewController: UITableViewController {
         cell?.textLabel?.text = dailyActivityArray[indexPath.row]
         cell?.detailTextLabel?.text = dailyActivityDescriptionArray[indexPath.row]
         
+        if (cell!.isSelected) {
+            
+            cell?.accessoryType = .checkmark
+        } else {
+            cell?.accessoryType = .none
+        }
+        
         return cell!
     }
     
@@ -61,22 +96,22 @@ class DailyActivityTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             
-            UserDefaults.standard.set("veryLight", forKey: "dailyActivity")
+            UserDefaults.standard.setValue("veryLight", forKey: "dailyActivityLevel")
         case 1:
             
-            UserDefaults.standard.set("light", forKey: "dailyActivity")
+            UserDefaults.standard.setValue("light", forKey: "dailyActivityLevel")
         case 2:
             
-            UserDefaults.standard.set("moderate", forKey: "dailyActivity")
+            UserDefaults.standard.setValue("moderate", forKey: "dailyActivityLevel")
         case 3:
             
-            UserDefaults.standard.set("heavy", forKey: "dailyActivity")
+            UserDefaults.standard.setValue("heavy", forKey: "dailyActivityLevel")
         case 4:
             
-            UserDefaults.standard.set("veryHeavy", forKey: "dailyActivity")
+            UserDefaults.standard.setValue("veryHeavy", forKey: "dailyActivityLevel")
         default:
             
-            UserDefaults.standard.set("veryLight", forKey: "dailyActivity")
+            UserDefaults.standard.setValue("veryLight", forKey: "dailyActivityLevel")
         }
     }
     
