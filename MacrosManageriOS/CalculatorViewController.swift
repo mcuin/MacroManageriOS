@@ -23,6 +23,7 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     var stoneTextField: UITextField!
     var stoneTextView: UITextView!
     var weightMeasure = ""
+    let prefferedFatTextField = UITextField()
     
     let actvityFactrosArray = ["Daily Activity Level", "Physical Activity Lifestyle", "Fitness Goal"]
     
@@ -80,14 +81,11 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
             calculatorScrollView.addSubview(actvityFactorsTableView)
             
             let prefferedFatTextView = UITextView()
-            
             prefferedFatTextView.text = "Preffered Percent of Fat in Diet"
             prefferedFatTextView.sizeToFit()
             prefferedFatTextView.frame = CGRect(x: 16, y: actvityFactorsTableView.frame.maxY + 16, width: prefferedFatTextView.contentSize.width, height: prefferedFatTextView.contentSize.height)
             
             calculatorScrollView.addSubview(prefferedFatTextView)
-            
-            let prefferedFatTextField = UITextField()
             
             prefferedFatTextField.placeholder = "Percent"
             prefferedFatTextField.keyboardType = .decimalPad
@@ -184,155 +182,203 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     
     @objc func calculate() {
         
-        var bmr: Double!
-        var tdee: Double!
-        var calories: Double!
-        var protein: Double!
-        var proteinCalories: Double!
-        var fat: Double!
-        var fatCalories: Double!
-        var carbs: Double!
-        var carbsCalories: Double!
-        let calendar = NSCalendar.current
-        let currentDate = NSDate()
-        let birthDate = UserDefaults.standard.value(forKey: "birthDate") as! NSDate
-        let components = Calendar.current.dateComponents([.year], from: birthDate as Date, to: Date())
-        let age = components.year
-        
-        switch weightMeasure {
-        case "imperial":
+        if prefferedFatTextField.text != nil {
+            var bmr: Double!
+            var tdee: Double!
+            var calories: Double!
+            var protein: Double!
+            var proteinCalories: Double!
+            var fat: Double!
+            var fatCalories: Double!
+            var carbs: Double!
+            var carbsCalories: Double!
+            let calendar = NSCalendar.current
+            let currentDate = NSDate()
+            let birthDate = UserDefaults.standard.value(forKey: "birthDate") as! NSDate
+            let components = Calendar.current.dateComponents([.year], from: birthDate as Date, to: Date())
+            let age = components.year
             
-            let pounds = Double(poundsTextField.text!)
-            let kg = pounds! * 0.454
-            let stone = (pounds! / 14)
-            
-            UserDefaults.standard.set(pounds, forKey: "pounds")
-            UserDefaults.standard.set(kg, forKey: "kilograms")
-            UserDefaults.standard.set(stone, forKey: "stone")
-            
-        case "metric":
-            
-            let kg = Double(kilogramsTextField.text!)
-            let pounds = kg! / 0.454
-            let stone = kg! * 0.157
-            
-            UserDefaults.standard.set(kg, forKey: "kilograms")
-            UserDefaults.standard.set(pounds, forKey: "pounds")
-            UserDefaults.standard.set(stone, forKey: "stone")
-            
-        case "stone":
-            
-            let stone = Double(stoneTextField.text!)
-            let pounds = stone! * 14
-            let kg = stone! * 6.35
-            
-            UserDefaults.standard.set(stone, forKey: "stone")
-            UserDefaults.standard.set(pounds, forKey: "kilograms")
-            UserDefaults.standard.set(kg, forKey: "kilograms")
-        default:
-            
-            let weightMeasureAlert = UIAlertController(title: "Weight Error", message: "There's was an error with your weight entry. Please try again.", preferredStyle: .alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (void) in
-                weightMeasureAlert.dismiss(animated: true, completion: nil)
+            switch weightMeasure {
+            case "imperial":
+                
+                let pounds = Double(poundsTextField.text!)
+                let kg = pounds! * 0.454
+                let stone = (pounds! / 14)
+                
+                UserDefaults.standard.set(pounds, forKey: "pounds")
+                UserDefaults.standard.set(kg, forKey: "kilograms")
+                UserDefaults.standard.set(stone, forKey: "stone")
+                
+            case "metric":
+                
+                let kg = Double(kilogramsTextField.text!)
+                let pounds = kg! / 0.454
+                let stone = kg! * 0.157
+                
+                UserDefaults.standard.set(kg, forKey: "kilograms")
+                UserDefaults.standard.set(pounds, forKey: "pounds")
+                UserDefaults.standard.set(stone, forKey: "stone")
+                
+            case "stone":
+                
+                let stone = Double(stoneTextField.text!)
+                let pounds = stone! * 14
+                let kg = stone! * 6.35
+                
+                UserDefaults.standard.set(stone, forKey: "stone")
+                UserDefaults.standard.set(pounds, forKey: "kilograms")
+                UserDefaults.standard.set(kg, forKey: "kilograms")
+            default:
+                
+                let weightMeasureAlert = UIAlertController(title: "Weight Error", message: "There's was an error with your weight entry. Please try again.", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (void) in
+                    weightMeasureAlert.dismiss(animated: true, completion: nil)
                 })
-            
-            weightMeasureAlert.addAction(okAction)
-            
-            self.present(weightMeasureAlert, animated: true, completion: nil)
-        }
-        
-        if let kg = UserDefaults.standard.value(forKey: "kilograms") as? Double, let cm = UserDefaults.standard.value(forKey: "cm") as? Double {
-            
-            if let gender = UserDefaults.standard.value(forKey: "gender") {
                 
-                switch(gender as! String) {
-                    
-                case "male":
-                 
-                    let weightCalc = (10 * kg)
-                    let heightCalc = (6.25 * cm)
-                    let ageCalc = Double(5 * age!)
-                    bmr = weightCalc + heightCalc - ageCalc + 5
-                    
-                case "female":
-                    
-                    let weightCalc = (10 * kg)
-                    let heightCalc = (6.25 * cm)
-                    let ageCalc = Double(5 * age!)
-                    bmr = weightCalc + heightCalc - ageCalc - 161
-                    print(bmr)
-                default:
-                    break
-                }
+                weightMeasureAlert.addAction(okAction)
+                
+                self.present(weightMeasureAlert, animated: true, completion: nil)
             }
             
-            if bmr != nil {
+            if let kg = UserDefaults.standard.value(forKey: "kilograms") as? Double, let cm = UserDefaults.standard.value(forKey: "cm") as? Double {
                 
-                if let dailyActivity = UserDefaults.standard.value(forKey: "dailyActivityLevel") as? String {
+                if let gender = UserDefaults.standard.value(forKey: "gender") {
                     
-                    switch(dailyActivity) {
+                    switch(gender as! String) {
                         
-                    case "veryLight":
+                    case "male":
                         
-                        tdee = bmr * 1.20
-                    case "light":
+                        let weightCalc = (10 * kg)
+                        let heightCalc = (6.25 * cm)
+                        let ageCalc = Double(5 * age!)
+                        bmr = weightCalc + heightCalc - ageCalc + 5
                         
-                        tdee = bmr * 1.45
-                    case "moderate":
+                    case "female":
                         
-                        tdee = bmr * 1.55
-                    case "heavy":
-                        
-                        tdee = bmr * 1.75
-                    case "veryHeavy":
-                        
-                        tdee = bmr * 2.00
+                        let weightCalc = (10 * kg)
+                        let heightCalc = (6.25 * cm)
+                        let ageCalc = Double(5 * age!)
+                        bmr = weightCalc + heightCalc - ageCalc - 161
+                        print(bmr)
                     default:
-                        
-                        tdee = bmr * 1.20
+                        break
                     }
                 }
                 
-                print(tdee)
-            }
-            
-            if tdee != nil {
-                
-                if let goal = UserDefaults.standard.value(forKey: "goal") as? String {
+                if bmr != nil {
                     
-                    switch(goal) {
+                    if let dailyActivity = UserDefaults.standard.value(forKey: "dailyActivityLevel") as? String {
                         
-                    case "maintain":
-                        
-                        calories = tdee
-                    case "burnFatSuggested":
-                        
-                        calories = tdee - (tdee * 0.15)
-                    case "burnFatAggressive":
-                        
-                        calories = tdee - (tdee * 0.20)
-                        
-                    case "burnFatReckless":
-                        
-                        calories = tdee - (tdee * 0.25)
-                    case "buildMuscleSuggested":
-                        
-                        calories = tdee + (tdee * 0.05)
-                    case "buildMuscleAggressive":
-                        
-                        calories = tdee + (tdee * 0.10)
-                    case "buildMuscleReckless":
-                        
-                        calories = tdee + (tdee * 0.15)
-                    default:
-                        
-                        calories = tdee
+                        switch(dailyActivity) {
+                            
+                        case "veryLight":
+                            
+                            tdee = bmr * 1.20
+                        case "light":
+                            
+                            tdee = bmr * 1.45
+                        case "moderate":
+                            
+                            tdee = bmr * 1.55
+                        case "heavy":
+                            
+                            tdee = bmr * 1.75
+                        case "veryHeavy":
+                            
+                            tdee = bmr * 2.00
+                        default:
+                            
+                            tdee = bmr * 1.20
+                        }
                     }
+                    
+                    print(tdee)
                 }
                 
-                print(calories)
-                UserDefaults.standard.set(calories, forKey: "calories")
+                if tdee != nil {
+                    
+                    if let goal = UserDefaults.standard.value(forKey: "goal") as? String {
+                        
+                        switch(goal) {
+                            
+                        case "maintain":
+                            
+                            calories = tdee
+                        case "burnFatSuggested":
+                            
+                            calories = tdee - (tdee * 0.15)
+                        case "burnFatAggressive":
+                            
+                            calories = tdee - (tdee * 0.20)
+                            
+                        case "burnFatReckless":
+                            
+                            calories = tdee - (tdee * 0.25)
+                        case "buildMuscleSuggested":
+                            
+                            calories = tdee + (tdee * 0.05)
+                        case "buildMuscleAggressive":
+                            
+                            calories = tdee + (tdee * 0.10)
+                        case "buildMuscleReckless":
+                            
+                            calories = tdee + (tdee * 0.15)
+                        default:
+                            
+                            calories = tdee
+                        }
+                    }
+                    
+                    print(calories)
+                    UserDefaults.standard.set(calories, forKey: "calories")
+                }
+                
+                if calories != nil {
+                    
+                    if let physicalActivityLifestyle = UserDefaults.standard.value(forKey: "physicalAcitvityLifestyle") as? String {
+                        
+                        switch physicalActivityLifestyle {
+                            
+                        case "sedentaryAdult":
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.4
+                        case "adultRecreationalExerciser":
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.75
+                        case "adultCompetitiveAthlete":
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.9
+                        case "adultBuildingMuscle":
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.9
+                        case "dietingAthlete":
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.9
+                        case "teenageGrowingAthlete":
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 1.0
+                        default:
+                            
+                            protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.4
+                        }
+                        
+                        UserDefaults.standard.set(protein, forKey: "protein")
+                    }
+                    
+                    if protein != nil {
+                        
+                        proteinCalories = protein * 4
+                        print(prefferedFatTextField.text)
+                        fatCalories = calories * (Double(prefferedFatTextField.text!)! / 100)
+                        fat = fatCalories / 9
+                        UserDefaults.standard.set(fat, forKey: "fat")
+                        carbsCalories = calories - (proteinCalories + fatCalories)
+                        carbs = carbsCalories / 4
+                        UserDefaults.standard.set(carbs, forKey: "carbs")
+                        print(calories, protein, fat, carbs)
+                    }
+                }
             }
         }
     }
