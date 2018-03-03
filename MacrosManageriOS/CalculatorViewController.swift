@@ -52,6 +52,9 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                 poundsTextField.sizeToFit()
                 previousView = poundsTextField
                 calculatorScrollView.addSubview(poundsTextField)
+                if let pounds = UserDefaults.standard.value(forKey: "pounds") {
+                    poundsTextField.text! = "\(pounds)"
+                }
             case "metric":
                 
                 kilogramsTextField = UITextField(frame: CGRect(x: 16, y: weightTextView.frame.maxY + 16, width: 1, height: 1))
@@ -59,6 +62,9 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                 kilogramsTextField.sizeToFit()
                 calculatorScrollView.addSubview(kilogramsTextField)
                 previousView = kilogramsTextField
+                if let kilograms = UserDefaults.standard.value(forKey: "kilograms") {
+                    kilogramsTextField.text! = "\(kilograms)"
+                }
             case "stone":
                 
                 stoneTextField = UITextField(frame: CGRect(x: 16, y: weightTextView.frame.maxY + 16, width: 1, height: 1))
@@ -66,6 +72,9 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                 stoneTextField.sizeToFit()
                 calculatorScrollView.addSubview(stoneTextField)
                 previousView = stoneTextField
+                if let stone = UserDefaults.standard.value(forKey: "stone") {
+                    stoneTextField.text! = "\(stone)"
+                }
             default:
                 
                 poundsTextField = UITextField(frame: CGRect(x: 16, y: weightTextView.frame.maxY + 16, width: 1, height: 1))
@@ -73,6 +82,9 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                 poundsTextField.sizeToFit()
                 calculatorScrollView.addSubview(poundsTextField)
                 previousView = poundsTextField
+                if let pounds = UserDefaults.standard.value(forKey: "pounds") {
+                    poundsTextField.text! = "\(pounds)"
+                }
             }
             
             let actvityFactorsTableView = UITableView()
@@ -94,6 +106,9 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
             prefferedFatTextField.placeholder = "Percent"
             prefferedFatTextField.keyboardType = .decimalPad
             prefferedFatTextField.frame = CGRect(x: 16, y: prefferedFatTextView.frame.maxY + 4, width: 75, height: 50)
+            if let prefferedFat = UserDefaults.standard.value(forKey: "prefferedFat") {
+                prefferedFatTextField.text = prefferedFat as? String
+            }
             
             calculatorScrollView.addSubview(prefferedFatTextField)
             
@@ -115,12 +130,12 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
             proteinTextView.frame = CGRect(x: fatsTextView.frame.maxX + 8, y: caloriesTextView.frame.maxY + 16, width: (UIScreen.main.bounds.width - calculateButton.bounds.width) / 3, height: 50)
             calculatorScrollView.addSubview(proteinTextView)
             
-            if let calcedCalories = UserDefaults.standard.value(forKey: "calories"), let calcedCarbs = UserDefaults.standard.value(forKey: "carbs"), let calcedFats = UserDefaults.standard.value(forKey: "fats"), let calcedProtein = UserDefaults.standard.value(forKey: "protein") {
+            if let calcedCalories = UserDefaults.standard.value(forKey: "calories"), let calcedCarbs = UserDefaults.standard.value(forKey: "carbs"), let calcedFats = UserDefaults.standard.value(forKey: "fat"), let calcedProtein = UserDefaults.standard.value(forKey: "protein"){
                 
-                caloriesTextView.text = "Calories: \(calcedCalories)"
-                carbsTextView.text = "Carbs: \(calcedCarbs)g"
-                fatsTextView.text = "Fats: \(calcedFats)g"
-                proteinTextView.text = "Protein: \(calcedProtein)g"
+                caloriesTextView.text! = "Calories: \(calcedCalories)"
+                carbsTextView.text! = "Carbs: \(calcedCarbs)g"
+                fatsTextView.text! = "Fats: \(calcedFats)g"
+                proteinTextView.text! = "Protein: \(calcedProtein)g"
             } else {
                 caloriesTextView.text = "Calories: 0"
                 carbsTextView.text = "Carbs: 0g"
@@ -359,7 +374,7 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                     }
                     
                     print(calories)
-                    UserDefaults.standard.set(calories, forKey: "calories")
+                    UserDefaults.standard.set(round(calories), forKey: "calories")
                 }
                 
                 if calories != nil {
@@ -391,25 +406,26 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                             protein = (UserDefaults.standard.value(forKey: "pounds") as! Double) * 0.4
                         }
                         
-                        UserDefaults.standard.set(protein, forKey: "protein")
+                        UserDefaults.standard.set(round(protein), forKey: "protein")
                     }
                     
                     if protein != nil {
                         
                         proteinCalories = protein * 4
                         print(prefferedFatTextField.text)
+                        UserDefaults.standard.set(prefferedFatTextField.text!, forKey: "prefferedFat")
                         fatCalories = calories * (Double(prefferedFatTextField.text!)! / 100)
                         fat = fatCalories / 9
-                        UserDefaults.standard.set(fat, forKey: "fat")
+                        UserDefaults.standard.set(round(fat), forKey: "fat")
                         carbsCalories = calories - (proteinCalories + fatCalories)
                         carbs = carbsCalories / 4
-                        UserDefaults.standard.set(carbs, forKey: "carbs")
+                        UserDefaults.standard.set(round(carbs), forKey: "carbs")
                         print(calories, protein, fat, carbs)
                         
-                        caloriesTextView.text = "Calories: \(calories)"
-                        carbsTextView.text = "Carbs: \(carbs)g"
-                        fatsTextView.text = "Fats: \(fat)g"
-                        proteinTextView.text = "Protein: \(protein)g"
+                        caloriesTextView.text! = "Calories: \(UserDefaults.standard.value(forKey: "calories")!)"
+                        carbsTextView.text! = "Carbs: \(UserDefaults.standard.value(forKey: "carbs")!)g"
+                        fatsTextView.text! = "Fats: \(UserDefaults.standard.value(forKey: "fat")!)g"
+                        proteinTextView.text! = "Protein: \(UserDefaults.standard.value(forKey: "protein")!)g"
                     }
                 }
             }
