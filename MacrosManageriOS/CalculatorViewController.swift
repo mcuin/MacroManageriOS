@@ -24,6 +24,10 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     var stoneTextView: UITextView!
     var weightMeasure = ""
     let prefferedFatTextField = UITextField()
+    let caloriesTextView = UITextView()
+    let carbsTextView = UITextView()
+    let fatsTextView = UITextView()
+    let proteinTextView = UITextView()
     
     let actvityFactrosArray = ["Daily Activity Level", "Physical Activity Lifestyle", "Fitness Goal"]
     
@@ -101,6 +105,28 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
             //calculateButton.frame =
             
             calculatorScrollView.addSubview(calculateButton)
+            
+            caloriesTextView.frame = CGRect(x: 16, y: prefferedFatTextField.frame.maxY + 16, width: (UIScreen.main.bounds.width - calculateButton.bounds.width) / 3, height: 50)
+            calculatorScrollView.addSubview(caloriesTextView)
+            carbsTextView.frame = CGRect(x: caloriesTextView.frame.maxX + 8, y: prefferedFatTextField.frame.maxY + 16, width: (UIScreen.main.bounds.width - calculateButton.bounds.width) / 3, height: 50)
+            calculatorScrollView.addSubview(carbsTextView)
+            fatsTextView.frame = CGRect(x: 16, y: caloriesTextView.frame.maxY + 16, width: (UIScreen.main.bounds.width - calculateButton.bounds.width) / 3, height: 50)
+            calculatorScrollView.addSubview(fatsTextView)
+            proteinTextView.frame = CGRect(x: fatsTextView.frame.maxX + 8, y: caloriesTextView.frame.maxY + 16, width: (UIScreen.main.bounds.width - calculateButton.bounds.width) / 3, height: 50)
+            calculatorScrollView.addSubview(proteinTextView)
+            
+            if let calcedCalories = UserDefaults.standard.value(forKey: "calories"), let calcedCarbs = UserDefaults.standard.value(forKey: "carbs"), let calcedFats = UserDefaults.standard.value(forKey: "fats"), let calcedProtein = UserDefaults.standard.value(forKey: "protein") {
+                
+                caloriesTextView.text = "Calories: \(calcedCalories)"
+                carbsTextView.text = "Carbs: \(calcedCarbs)g"
+                fatsTextView.text = "Fats: \(calcedFats)g"
+                proteinTextView.text = "Protein: \(calcedProtein)g"
+            } else {
+                caloriesTextView.text = "Calories: 0"
+                carbsTextView.text = "Carbs: 0g"
+                fatsTextView.text = "Fats: 0g"
+                proteinTextView.text = "Protein: 0g"
+            }
         } else {
             
             let calculatorAlertController = UIAlertController(title: "Missing Data", message: "Please fill out your data in the settings screen.", preferredStyle: .alert)
@@ -183,6 +209,8 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     @objc func calculate() {
         
         if prefferedFatTextField.text != nil {
+            
+            UserDefaults.standard.set(prefferedFatTextField.text, forKey: "prefferedFat")
             var bmr: Double!
             var tdee: Double!
             var calories: Double!
@@ -377,6 +405,11 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                         carbs = carbsCalories / 4
                         UserDefaults.standard.set(carbs, forKey: "carbs")
                         print(calories, protein, fat, carbs)
+                        
+                        caloriesTextView.text = "Calories: \(calories)"
+                        carbsTextView.text = "Carbs: \(carbs)g"
+                        fatsTextView.text = "Fats: \(fat)g"
+                        proteinTextView.text = "Protein: \(protein)g"
                     }
                 }
             }
