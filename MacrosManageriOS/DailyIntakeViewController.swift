@@ -14,20 +14,51 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
     @IBOutlet weak var dailyFoodTableView: UITableView!
     @IBOutlet weak var dailyIntakeTabBar: UITabBar!
     let macros = ["Calories", "Carbohydrates", "Fats", "Protein"]
+    var goalCalories: String!
+    var goalCarbs: String!
+    var goalFats: String!
+    var goalProtein: String!
+    var dailyCalories: String!
+    var dailyCarbs: String!
+    var dailyFats: String!
+    var dailyProtein: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         dailyIntakeTabBar.delegate = self
+        dailyIntakeCollectionView.delegate = self
+        dailyIntakeCollectionView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
-        dailyIntakeCollectionView.delegate = self
-        dailyIntakeCollectionView.dataSource = self
         
+        if let calories = UserDefaults.standard.value(forKey: "calories") {
+            goalCalories = "\(calories)"
+        } else {
+            goalCalories = "0"
+        }
+        
+        if let carbs = UserDefaults.standard.value(forKey: "carbs") {
+            goalCarbs = "\(carbs)"
+        } else {
+            goalCarbs = "0"
+        }
+        
+        if let fats = UserDefaults.standard.value(forKey: "fat") {
+            goalFats = "\(fats)"
+        } else {
+            goalFats = "0"
+        }
+        
+        if let protein = UserDefaults.standard.value(forKey: "protein") {
+            goalProtein = "\(protein)"
+        } else {
+            goalProtein = "0"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +73,18 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyIntakeCollectionCell", for: indexPath) as! DailyIntakeCollectionCell
         cell.dailyIntakeCellTitle.text = macros[indexPath.row]
+        switch indexPath.row {
+        case 0:
+            cell.dailyIntakeGoal.text = goalCalories
+        case 1:
+            cell.dailyIntakeGoal.text = goalCarbs
+        case 2:
+            cell.dailyIntakeGoal.text = goalFats
+        case 3:
+            cell.dailyIntakeGoal.text = goalProtein
+        default:
+            break
+        }
         return cell
     }
     
