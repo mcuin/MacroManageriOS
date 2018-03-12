@@ -43,21 +43,45 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         }
         
         if let carbs = UserDefaults.standard.value(forKey: "carbs") {
-            goalCarbs = "\(carbs)"
+            goalCarbs = "\(carbs)g"
         } else {
-            goalCarbs = "0"
+            goalCarbs = "0g"
         }
         
         if let fats = UserDefaults.standard.value(forKey: "fat") {
-            goalFats = "\(fats)"
+            goalFats = "\(fats)g"
         } else {
-            goalFats = "0"
+            goalFats = "0g"
         }
         
         if let protein = UserDefaults.standard.value(forKey: "protein") {
-            goalProtein = "\(protein)"
+            goalProtein = "\(protein)g"
         } else {
-            goalProtein = "0"
+            goalProtein = "0g"
+        }
+        
+        if let currentDailyCals = UserDefaults.standard.value(forKey: "currentDailyCals") {
+            dailyCalories = "\(currentDailyCals)"
+        } else {
+            dailyCalories = "0"
+        }
+        
+        if let currentDailyCarbs = UserDefaults.standard.value(forKey: "currentDailyCarbs") {
+            dailyCarbs = "\(currentDailyCarbs)g"
+        } else {
+            dailyCarbs = "0g"
+        }
+        
+        if let currentDailyFats = UserDefaults.standard.value(forKey: "currentDailyFats") {
+            dailyFats = "\(currentDailyFats)g"
+        } else {
+            dailyFats = "0g"
+        }
+        
+        if let currentDailyProtein = UserDefaults.standard.value(forKey: "currentDailyProtein") {
+            dailyProtein = "\(currentDailyProtein)g"
+        } else {
+            dailyProtein = "0g"
         }
     }
 
@@ -76,12 +100,16 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         switch indexPath.row {
         case 0:
             cell.dailyIntakeGoal.text = goalCalories
+            cell.dailyIntakeCurrent.text = dailyCalories
         case 1:
             cell.dailyIntakeGoal.text = goalCarbs
+            cell.dailyIntakeCurrent.text = dailyCarbs
         case 2:
             cell.dailyIntakeGoal.text = goalFats
+            cell.dailyIntakeCurrent.text = dailyFats
         case 3:
             cell.dailyIntakeGoal.text = goalProtein
+            cell.dailyIntakeCurrent.text = dailyProtein
         default:
             break
         }
