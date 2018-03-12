@@ -13,6 +13,8 @@
 		DB08E8E21F51C7F7007EC05D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E11F51C7F7007EC05D /* Assets.xcassets */; };
 		DB08E8E51F51C7F7007EC05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E31F51C7F7007EC05D /* LaunchScreen.storyboard */; };
 		DB92742B1F7EB7E700165DF0 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */; };
+		DBAB1BD4204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB1BD3204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift */; };
+		DBAB1BD6204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB1BD5204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift */; };
 		DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */; };
 		DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */; };
 		DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */; };
@@ -32,6 +34,8 @@
 		DB08E8E41F51C7F7007EC05D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB08E8E61F51C7F7007EC05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		DBAB1BD3204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DBAB1BD5204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFoodTableViewCell.swift; sourceTree = "<group>"; };
 		DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DBB7C2C91F55B7830039E7C5 /* GenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewController.swift; sourceTree = "<group>"; };
 		DBB7C2CB1F55C6C30039E7C5 /* WeightMeasurementTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightMeasurementTableView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				DBDC1CC61F968093003FE3DD /* DailyActivityTableViewController.swift */,
 				DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */,
 				DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */,
+				DBAB1BD3204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift */,
+				DBAB1BD5204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift */,
 			);
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
@@ -172,7 +178,9 @@
 				DBB7C2CC1F55C6C30039E7C5 /* WeightMeasurementTableView.swift in Sources */,
 				DB92742B1F7EB7E700165DF0 /* CalculatorViewController.swift in Sources */,
 				DB08E8DB1F51C7F7007EC05D /* AppDelegate.swift in Sources */,
+				DBAB1BD6204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift in Sources */,
 				DBC9E72A1F7EA5250020FD72 /* BirthDatePickerViewController.swift in Sources */,
+				DBAB1BD4204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift in Sources */,
 				DBB7C2CA1F55B7830039E7C5 /* GenderTableViewController.swift in Sources */,
 				DBB7C2CE1F55D8830039E7C5 /* HeightMeasurementTableView.swift in Sources */,
 				DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */,

@@ -8,9 +8,12 @@
 
 import UIKit
 
-class DailyIntakeViewController: UIViewController, UITabBarDelegate {
-
+class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var dailyIntakeCollectionView: UICollectionView!
+    @IBOutlet weak var dailyFoodTableView: UITableView!
     @IBOutlet weak var dailyIntakeTabBar: UITabBar!
+    let macros = ["Calories", "Carbohydrates", "Fats", "Protein"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +25,33 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        dailyIntakeCollectionView.delegate = self
+        dailyIntakeCollectionView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return macros.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyIntakeCollectionCell", for: indexPath) as! DailyIntakeCollectionCell
+        cell.dailyIntakeCellTitle.text = macros[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dailyFoodTableCell") as! DailyFoodTableViewCell
+        return cell
     }
 
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
