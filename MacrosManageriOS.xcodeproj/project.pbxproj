@@ -23,6 +23,7 @@
 		DBDC1CC71F968093003FE3DD /* DailyActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC1CC61F968093003FE3DD /* DailyActivityTableViewController.swift */; };
 		DBDC1CC91F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */; };
 		DBDC1CCB1F9680BF003FE3DD /* GoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */; };
+		DBE7029A20587BA100C91F69 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7029920587BA100C91F69 /* AddFoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DBDC1CC61F968093003FE3DD /* DailyActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyActivityTableViewController.swift; sourceTree = "<group>"; };
 		DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivityLifestyleTableViewController.swift; sourceTree = "<group>"; };
 		DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
+		DBE7029920587BA100C91F69 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */,
 				DBAB1BD3204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift */,
 				DBAB1BD5204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift */,
+				DBE7029920587BA100C91F69 /* AddFoodViewController.swift */,
 			);
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE7029A20587BA100C91F69 /* AddFoodViewController.swift in Sources */,
 				DBDC1CC71F968093003FE3DD /* DailyActivityTableViewController.swift in Sources */,
 				DBDC1CC91F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift in Sources */,
 				DB08E8DD1F51C7F7007EC05D /* DailyIntakeViewController.swift in Sources */,
