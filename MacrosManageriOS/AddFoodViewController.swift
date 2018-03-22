@@ -109,6 +109,25 @@ class AddFoodViewController: UIViewController {
             }
         }
         
-        
+        if let name = foodName, let serving = foodServing, let cals = foodCals, let carbs = foodCarbs, let fats = foodFats, let protein = foodProtein {
+            food = ["foodName": name, "foodServings": serving, "foodCalories": cals, "foodCarbs": carbs, "foodFats": fats, "foodProtein": protein]
+            if var dailyFoods = UserDefaults.standard.value(forKey: "dailyFoods") as? Array<Dictionary<String, Any>> {
+                dailyFoods.append(food)
+                
+                UserDefaults.standard.set(dailyFoods, forKey: "dailyFoods")
+            } else {
+                let dailyFoods = [food]
+                
+                UserDefaults.standard.set(dailyFoods, forKey: "dailyFoods")
+            }
+        } else {
+            
+            let foodSaveAlert = UIAlertController(title: "Unable to Add Food", message: "There was an issue adding your food. Please try again.", preferredStyle: .alert)
+            foodSaveAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            DispatchQueue.main.async {
+                self.present(foodSaveAlert, animated: true, completion: nil)
+            }
+        }
     }
 }
