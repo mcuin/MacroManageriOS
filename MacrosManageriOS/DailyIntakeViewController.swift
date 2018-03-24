@@ -60,25 +60,25 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
             goalProtein = "0g"
         }
         
-        if let currentDailyCals = UserDefaults.standard.value(forKey: "currentDailyCals") {
+        if let currentDailyCals = UserDefaults.standard.value(forKey: "dailyCurrentCals") {
             dailyCalories = "\(currentDailyCals)"
         } else {
             dailyCalories = "0"
         }
         
-        if let currentDailyCarbs = UserDefaults.standard.value(forKey: "currentDailyCarbs") {
+        if let currentDailyCarbs = UserDefaults.standard.value(forKey: "dailyCurrentCarbs") {
             dailyCarbs = "\(currentDailyCarbs)g"
         } else {
             dailyCarbs = "0g"
         }
         
-        if let currentDailyFats = UserDefaults.standard.value(forKey: "currentDailyFats") {
+        if let currentDailyFats = UserDefaults.standard.value(forKey: "dailyCurrentFats") {
             dailyFats = "\(currentDailyFats)g"
         } else {
             dailyFats = "0g"
         }
         
-        if let currentDailyProtein = UserDefaults.standard.value(forKey: "currentDailyProtein") {
+        if let currentDailyProtein = UserDefaults.standard.value(forKey: "dailyCurrentProtein") {
             dailyProtein = "\(currentDailyProtein)g"
         } else {
             dailyProtein = "0g"
