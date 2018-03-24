@@ -120,6 +120,35 @@ class AddFoodViewController: UIViewController {
                 
                 UserDefaults.standard.set(dailyFoods, forKey: "dailyFoods")
             }
+            
+            if var dailyCurrentCals = UserDefaults.standard.value(forKey: "dailyCurrentCals") as? Double {
+                dailyCurrentCals = (cals * serving) + Double(dailyCurrentCals)
+                UserDefaults.standard.set(dailyCurrentCals, forKey: "dailyCurrentCals")
+            } else {
+                UserDefaults.standard.set((cals * serving), forKey: "dailyCurrentCals")
+            }
+            
+            if var dailyCurrentCarbs = UserDefaults.standard.value(forKey: "dailyCurrentCarbs") as? Double {
+                dailyCurrentCarbs = (carbs * serving) + dailyCurrentCarbs
+                UserDefaults.standard.set(dailyCurrentCarbs, forKey: "dailyCurrentCarbs")
+            } else {
+                UserDefaults.standard.set((carbs * serving), forKey: "dailyCurrentCarbs")
+            }
+            
+            if var dailyCurrentFats = UserDefaults.standard.value(forKey: "dailyCurrentFats") as? Double {
+                dailyCurrentFats = (fats * serving) + dailyCurrentFats
+                UserDefaults.standard.set(dailyCurrentFats, forKey: "dailyCurrentFats")
+            } else {
+                UserDefaults.standard.set((fats * serving), forKey: "dailyCurrentFats")
+            }
+            
+            if var dailyCurrentProtein = UserDefaults.standard.value(forKey: "dailyCurrentProtein") as? Double {
+                dailyCurrentProtein = (protein * serving) + dailyCurrentProtein
+                UserDefaults.standard.set(dailyCurrentProtein, forKey: "dailyCurrentProtein")
+            } else {
+                UserDefaults.standard.set((protein * serving), forKey: "dailyCurrentProtein")
+            }
+            
         } else {
             
             let foodSaveAlert = UIAlertController(title: "Unable to Add Food", message: "There was an issue adding your food. Please try again.", preferredStyle: .alert)
