@@ -26,17 +26,17 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
         
         dailyIntakeTabBar.delegate = self
         dailyIntakeCollectionView.delegate = self
         dailyIntakeCollectionView.dataSource = self
         dailyFoodTableView.delegate = self
         dailyFoodTableView.dataSource = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
         
         if let calories = UserDefaults.standard.value(forKey: "calories") {
             goalCalories = "\(calories)"
@@ -138,6 +138,11 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: "goto_editFood", sender: self)
+    }
 
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
@@ -152,6 +157,18 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         default:
             
             break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goto_addFood") {
+            let destinationViewController = segue.destination as? AddFoodViewController
+            destinationViewController?.foodTableView = self.dailyFoodTableView
+        }
+        if (segue.identifier == "goto_editFood") {
+            let destinationViewController = segue.destination as? AddFoodViewController
+            destinationViewController?.editFoodIndex = self.dailyFoodTableView.indexPathForSelectedRow?.row
+            destinationViewController?.foodTableView = self.dailyFoodTableView
         }
     }
 }

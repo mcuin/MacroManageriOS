@@ -18,6 +18,8 @@ class AddFoodViewController: UIViewController {
     @IBOutlet weak var foodFatsTextField: UITextField!
     @IBOutlet weak var foodProteinTextField: UITextField!
     @IBOutlet weak var foodSaveButton: UIButton!
+    var editFoodIndex: Int!
+    var foodTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,18 @@ class AddFoodViewController: UIViewController {
         super.viewWillAppear(animated)
         
         foodSaveButton.addTarget(self, action: #selector(saveFood(_sender:)), for: .touchUpInside)
+        
+        if editFoodIndex != nil {
+            if let editFood = UserDefaults.standard.value(forKey: "dailyFoods") as? Array<Dictionary<String, Any>> {
+                let food = editFood[editFoodIndex]
+                foodNameTextField.text = food["foodName"] as? String
+                foodCaloriesTextField.text! = "\(food["foodCalories"]!)"
+                foodServingSizeTextField.text! = "\(food["foodServings"]!)"
+                foodCarbsTextField.text! = "\(food["foodCarbs"]!)"
+                foodFatsTextField.text! = "\(food["foodFats"]!)"
+                foodProteinTextField.text! = "\(food["foodProtein"]!)"
+            }
+        }
     }
     
     @objc func saveFood(_sender: UIButton) {
@@ -112,7 +126,13 @@ class AddFoodViewController: UIViewController {
         if let name = foodName, let serving = foodServing, let cals = foodCals, let carbs = foodCarbs, let fats = foodFats, let protein = foodProtein {
             food = ["foodName": name, "foodServings": serving, "foodCalories": cals, "foodCarbs": carbs, "foodFats": fats, "foodProtein": protein]
             if var dailyFoods = UserDefaults.standard.value(forKey: "dailyFoods") as? Array<Dictionary<String, Any>> {
-                dailyFoods.append(food)
+                
+                if editFoodIndex != nil {
+                    dailyFoods[editFoodIndex] = food
+                } else {
+                
+                    dailyFoods.append(food)
+                }
                 
                 UserDefaults.standard.set(dailyFoods, forKey: "dailyFoods")
             } else {
@@ -148,7 +168,8 @@ class AddFoodViewController: UIViewController {
             } else {
                 UserDefaults.standard.set((protein * serving), forKey: "dailyCurrentProtein")
             }
-            
+            foodTableView.reloadData()
+            self.navigationController?.popViewController(animated: true)
         } else {
             
             let foodSaveAlert = UIAlertController(title: "Unable to Add Food", message: "There was an issue adding your food. Please try again.", preferredStyle: .alert)
