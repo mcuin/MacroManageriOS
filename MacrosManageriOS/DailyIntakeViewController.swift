@@ -30,6 +30,8 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         dailyIntakeTabBar.delegate = self
         dailyIntakeCollectionView.delegate = self
         dailyIntakeCollectionView.dataSource = self
+        dailyFoodTableView.delegate = self
+        dailyFoodTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,11 +119,23 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        var count: Int!
+        if let foods = UserDefaults.standard.value(forKey: "dailyFoods") as? Array<Any> {
+            count = foods.count
+        } else {
+            count = 0
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dailyFoodTableCell") as! DailyFoodTableViewCell
+        if let foods = UserDefaults.standard.value(forKey: "dailyFoods") as? Array<Dictionary<String, Any>> {
+            
+            cell.foodNameLabel.text! = (foods[indexPath.row])["foodName"]! as! String
+            cell.foodCaloriesLabel.text! = "Calories \((foods[indexPath.row])["foodCalories"] as! NSNumber)"
+            cell.foodServingLabel.text! = "Servings \((foods[indexPath.row])["foodServings"] as! NSNumber)"
+        }
         return cell
     }
 
