@@ -164,11 +164,13 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         if (segue.identifier == "goto_addFood") {
             let destinationViewController = segue.destination as? AddFoodViewController
             destinationViewController?.foodTableView = self.dailyFoodTableView
+            destinationViewController?.macrosCollectionView = self.dailyIntakeCollectionView
         }
         if (segue.identifier == "goto_editFood") {
             let destinationViewController = segue.destination as? AddFoodViewController
             destinationViewController?.editFoodIndex = self.dailyFoodTableView.indexPathForSelectedRow?.row
             destinationViewController?.foodTableView = self.dailyFoodTableView
+            destinationViewController?.macrosCollectionView = self.dailyIntakeCollectionView
         }
     }
 }

@@ -20,6 +20,12 @@ class AddFoodViewController: UIViewController {
     @IBOutlet weak var foodSaveButton: UIButton!
     var editFoodIndex: Int!
     var foodTableView: UITableView!
+    var macrosCollectionView: UICollectionView!
+    var editCalories: Double!
+    var editServings: Double!
+    var editCarbs: Double!
+    var editFats: Double!
+    var editProtien: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +45,15 @@ class AddFoodViewController: UIViewController {
                 let food = editFood[editFoodIndex]
                 foodNameTextField.text = food["foodName"] as? String
                 foodCaloriesTextField.text! = "\(food["foodCalories"]!)"
+                editCalories = food["foodCalories"] as! Double
                 foodServingSizeTextField.text! = "\(food["foodServings"]!)"
+                editServings = food["foodServings"] as! Double
                 foodCarbsTextField.text! = "\(food["foodCarbs"]!)"
+                editCarbs = food["foodCarbs"] as! Double
                 foodFatsTextField.text! = "\(food["foodFats"]!)"
+                editFats = food["foodFats"] as! Double
                 foodProteinTextField.text! = "\(food["foodProtein"]!)"
+                editProtien = food["foodProtein"] as! Double
             }
         }
     }
@@ -129,6 +140,18 @@ class AddFoodViewController: UIViewController {
                 
                 if editFoodIndex != nil {
                     dailyFoods[editFoodIndex] = food
+                    var dailyCurrentCals = UserDefaults.standard.value(forKey: "dailyCurrentCals") as! Double
+                    dailyCurrentCals -= (editCalories * editServings)
+                    UserDefaults.standard.set(dailyCurrentCals, forKey: "dailyCurrentCals")
+                    var dailyCurrentCarbs = UserDefaults.standard.value(forKey: "dailyCurrentCarbs") as! Double
+                    dailyCurrentCarbs -= (editCarbs * editServings)
+                    UserDefaults.standard.set(dailyCurrentCarbs, forKey: "dailyCurrentCarbs")
+                    var dailyCurrentFats = UserDefaults.standard.value(forKey: "dailyCurrentFats") as! Double
+                    dailyCurrentFats -= (editFats * editServings)
+                    UserDefaults.standard.set(dailyCurrentFats, forKey: "dailyCurrentFats")
+                    var dailyCurrentProtein = UserDefaults.standard.value(forKey: "dailyCurrentProtein") as! Double
+                    dailyCurrentProtein -= (editProtien * editServings)
+                    UserDefaults.standard.set(dailyCurrentProtein, forKey: "dailyCurrentProtein")
                 } else {
                 
                     dailyFoods.append(food)
@@ -169,6 +192,7 @@ class AddFoodViewController: UIViewController {
                 UserDefaults.standard.set((protein * serving), forKey: "dailyCurrentProtein")
             }
             foodTableView.reloadData()
+            macrosCollectionView.reloadData()
             self.navigationController?.popViewController(animated: true)
         } else {
             
