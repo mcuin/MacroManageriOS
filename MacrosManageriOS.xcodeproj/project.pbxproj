@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D52D0F5ABAE08B2060C0E673 /* Pods_MacrosManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E7612BF53D07C445AAD950C /* Pods_MacrosManageriOS.framework */; };
 		DB08E8DB1F51C7F7007EC05D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08E8DA1F51C7F7007EC05D /* AppDelegate.swift */; };
 		DB08E8DD1F51C7F7007EC05D /* DailyIntakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB08E8DC1F51C7F7007EC05D /* DailyIntakeViewController.swift */; };
 		DB08E8E01F51C7F7007EC05D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8DE1F51C7F7007EC05D /* Main.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E7612BF53D07C445AAD950C /* Pods_MacrosManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MacrosManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98CC9C2E75BC7DFD52C68E5D /* Pods-MacrosManageriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacrosManageriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MacrosManageriOS/Pods-MacrosManageriOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DB08E8D71F51C7F7007EC05D /* MacrosManageriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacrosManageriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB08E8DA1F51C7F7007EC05D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB08E8DC1F51C7F7007EC05D /* DailyIntakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		DBDC1CC81F9680B0003FE3DD /* PhysicalActivityLifestyleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalActivityLifestyleTableViewController.swift; sourceTree = "<group>"; };
 		DBDC1CCA1F9680BF003FE3DD /* GoalTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
 		DBE7029920587BA100C91F69 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
+		EF6FE98D313E91EF24A7E2F6 /* Pods-MacrosManageriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacrosManageriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MacrosManageriOS/Pods-MacrosManageriOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +57,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52D0F5ABAE08B2060C0E673 /* Pods_MacrosManageriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA4D99F88BF7633E2AE87AC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E7612BF53D07C445AAD950C /* Pods_MacrosManageriOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB08E8CE1F51C7F7007EC05D = {
 			isa = PBXGroup;
 			children = (
 				DB08E8D91F51C7F7007EC05D /* MacrosManageriOS */,
 				DB08E8D81F51C7F7007EC05D /* Products */,
+				DDE252C370EA22673BF9D82B /* Pods */,
+				CA4D99F88BF7633E2AE87AC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +115,15 @@
 			path = MacrosManageriOS;
 			sourceTree = "<group>";
 		};
+		DDE252C370EA22673BF9D82B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				98CC9C2E75BC7DFD52C68E5D /* Pods-MacrosManageriOS.debug.xcconfig */,
+				EF6FE98D313E91EF24A7E2F6 /* Pods-MacrosManageriOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB08E8E91F51C7F7007EC05D /* Build configuration list for PBXNativeTarget "MacrosManageriOS" */;
 			buildPhases = (
+				74981EF5FA84A996C2554F51 /* [CP] Check Pods Manifest.lock */,
 				DB08E8D31F51C7F7007EC05D /* Sources */,
 				DB08E8D41F51C7F7007EC05D /* Frameworks */,
 				DB08E8D51F51C7F7007EC05D /* Resources */,
+				FE781C248A1F3E881A31FDF7 /* [CP] Embed Pods Frameworks */,
+				5FE1DC7B4FAD194F73C4AA72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +195,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FE1DC7B4FAD194F73C4AA72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacrosManageriOS/Pods-MacrosManageriOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74981EF5FA84A996C2554F51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MacrosManageriOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE781C248A1F3E881A31FDF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacrosManageriOS/Pods-MacrosManageriOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB08E8D31F51C7F7007EC05D /* Sources */ = {
@@ -322,6 +400,7 @@
 		};
 		DB08E8EA1F51C7F7007EC05D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98CC9C2E75BC7DFD52C68E5D /* Pods-MacrosManageriOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VG3AW43EZ3;
@@ -337,6 +416,7 @@
 		};
 		DB08E8EB1F51C7F7007EC05D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF6FE98D313E91EF24A7E2F6 /* Pods-MacrosManageriOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VG3AW43EZ3;
