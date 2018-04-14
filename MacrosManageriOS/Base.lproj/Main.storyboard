@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mMo-Jq-uMX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mMo-Jq-uMX">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -116,7 +116,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-Ba-CML">
-                                <rect key="frame" x="0.0" y="291" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="291" width="375" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dailyFoodTableCell" id="1lw-cu-NrM" customClass="DailyFoodTableViewCell" customModule="MacrosManageriOS" customModuleProvider="target">
@@ -167,20 +167,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEU-tE-V1f" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="679" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DJZ-xY-RYL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T7M-1a-nOs" firstAttribute="top" secondItem="Tfj-3T-WOy" secondAttribute="bottom" id="16Q-xw-HsA"/>
                             <constraint firstItem="T7M-1a-nOs" firstAttribute="leading" secondItem="VSa-ua-QVe" secondAttribute="leading" id="3Db-Cm-gne"/>
                             <constraint firstItem="T7M-1a-nOs" firstAttribute="leading" secondItem="7cC-Ba-CML" secondAttribute="leading" id="3dD-T1-vgo"/>
-                            <constraint firstItem="7cC-Ba-CML" firstAttribute="bottom" secondItem="VSa-ua-QVe" secondAttribute="top" id="723-kc-g4D"/>
+                            <constraint firstItem="VEU-tE-V1f" firstAttribute="leading" secondItem="yPf-Yj-vsF" secondAttribute="leading" id="8p5-Gj-JCU"/>
                             <constraint firstItem="VSa-ua-QVe" firstAttribute="leading" secondItem="yPf-Yj-vsF" secondAttribute="leading" id="Axf-jA-sqv"/>
                             <constraint firstItem="T7M-1a-nOs" firstAttribute="height" secondItem="yPf-Yj-vsF" secondAttribute="height" multiplier="1/4" id="Hc3-su-p7R"/>
+                            <constraint firstAttribute="trailing" secondItem="VEU-tE-V1f" secondAttribute="trailing" id="Mdb-2H-sv0"/>
                             <constraint firstAttribute="trailing" secondItem="VSa-ua-QVe" secondAttribute="trailing" id="VsW-4E-RIj"/>
+                            <constraint firstItem="VSa-ua-QVe" firstAttribute="top" secondItem="VEU-tE-V1f" secondAttribute="bottom" id="Wnd-sH-QPc"/>
                             <constraint firstItem="T7M-1a-nOs" firstAttribute="trailing" secondItem="7cC-Ba-CML" secondAttribute="trailing" id="YTj-Ac-Eda"/>
                             <constraint firstItem="7cC-Ba-CML" firstAttribute="top" secondItem="T7M-1a-nOs" secondAttribute="bottom" id="aAH-QY-fNO"/>
                             <constraint firstAttribute="bottom" secondItem="VSa-ua-QVe" secondAttribute="bottom" id="bMp-0i-Ovv"/>
                             <constraint firstItem="7cC-Ba-CML" firstAttribute="trailing" secondItem="VSa-ua-QVe" secondAttribute="trailing" id="bfB-6J-Gy6"/>
+                            <constraint firstItem="VEU-tE-V1f" firstAttribute="top" secondItem="7cC-Ba-CML" secondAttribute="bottom" id="rmg-xQ-ylC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YLo-74-p7O">
@@ -191,6 +201,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="DailyIntakeAdBannerView" destination="VEU-tE-V1f" id="B6P-hs-23d"/>
                         <outlet property="dailyFoodTableView" destination="7cC-Ba-CML" id="4YL-ib-2D7"/>
                         <outlet property="dailyIntakeCollectionView" destination="T7M-1a-nOs" id="DBM-tU-FvT"/>
                         <outlet property="dailyIntakeTabBar" destination="VSa-ua-QVe" id="Zts-ux-zfh"/>
@@ -571,7 +582,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" id="Zbf-DD-XYD">
-                                        <rect key="frame" x="0.0" y="55.333333333333336" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zbf-DD-XYD" id="SUo-xE-ZcS">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
@@ -622,7 +633,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="genderCell" id="qpJ-wA-4nC">
-                                <rect key="frame" x="0.0" y="55.333333333333336" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qpJ-wA-4nC" id="yeo-9C-DAp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -653,7 +664,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="heightMeasureCell" id="QsF-Wq-8C4">
-                                <rect key="frame" x="0.0" y="55.333333333333336" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QsF-Wq-8C4" id="ZBr-rG-XeZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -684,7 +695,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weightMeasurementCell" id="pCV-Kv-VGg">
-                                <rect key="frame" x="0.0" y="55.333333333333336" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCV-Kv-VGg" id="LTO-zL-dgZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>

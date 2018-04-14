@@ -8,12 +8,17 @@
 
 import UIKit
 
+import GoogleMobileAds
+
 class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var dailyIntakeCollectionView: UICollectionView!
     @IBOutlet weak var dailyFoodTableView: UITableView!
     @IBOutlet weak var dailyIntakeTabBar: UITabBar!
+    @IBOutlet weak var dailyIntakeAdBannerView: GADBannerView!
+    
     let macros = ["Calories", "Carbohydrates", "Fats", "Protein"]
+    var adsActive = false
     var goalCalories: String!
     var goalCarbs: String!
     var goalFats: String!
@@ -26,11 +31,27 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(clearCurrentDaily), name: .NSCalendarDayChanged, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
+        
+        if (adsActive) {
+            let request = GADRequest()
+            request.testDevices = ["kGADSimulatorID"]
+            dailyIntakeAdBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            dailyIntakeAdBannerView.rootViewController = self
+            dailyIntakeAdBannerView.load(request)
+        } else {
+            dailyIntakeAdBannerView.isHidden = true
+            dailyIntakeAdBannerView.removeFromSuperview()
+            dailyFoodTableView.frame = CGRect(x: dailyFoodTableView.frame.minX, y: dailyFoodTableView.frame.midY, width: UIScreen.main.bounds.width, height: dailyFoodTableView.frame.height + 50)
+            //self.view.addSubview(dailyFoodTableView)
+            dailyFoodTableView.backgroundColor = UIColor.blue
+        }
         
         dailyIntakeTabBar.delegate = self
         dailyIntakeCollectionView.delegate = self
@@ -172,6 +193,36 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
             destinationViewController?.foodTableView = self.dailyFoodTableView
             destinationViewController?.macrosCollectionView = self.dailyIntakeCollectionView
         }
+    }
+    
+    @objc func clearCurrentDaily(_ notification: Notification) {
+        if var dailyCurrentCals = UserDefaults.standard.value(forKey: "dailyCurrentCals") as? Double {
+            dailyCurrentCals = 0
+            UserDefaults.standard.set(dailyCurrentCals, forKey: "dailyCurrentCals")
+        }
+        
+        if var dailyCurrentCarbs = UserDefaults.standard.value(forKey: "dailyCurrentCarbs") as? Double {
+            dailyCurrentCarbs = 0
+            UserDefaults.standard.set(dailyCurrentCarbs, forKey: "dailyCurrentCarbs")
+        }
+        
+        if var dailyCurrentFats = UserDefaults.standard.value(forKey: "dailyCurrentFats") as? Double {
+            dailyCurrentFats = 0
+            UserDefaults.standard.set(dailyCurrentFats, forKey: "dailyCurrentFats")
+        }
+        
+        if var dailyCurrentProtein = UserDefaults.standard.value(forKey: "dailyCurrentProtein") as? Double {
+            dailyCurrentProtein = 0
+            UserDefaults.standard.set(dailyCurrentProtein, forKey: "dailyCurrentProtein")
+        }
+        
+        if var food = UserDefaults.standard.value(forKey: "dailyFoods") as? Array<Dictionary<String, Any>> {
+            food = []
+            UserDefaults.standard.set(food, forKey: "dailyFoods")
+        }
+        
+        dailyIntakeCollectionView.reloadData()
+        dailyFoodTableView.reloadData()
     }
 }
 
