@@ -205,6 +205,7 @@
                         <outlet property="dailyFoodTableView" destination="7cC-Ba-CML" id="4YL-ib-2D7"/>
                         <outlet property="dailyIntakeCollectionView" destination="T7M-1a-nOs" id="DBM-tU-FvT"/>
                         <outlet property="dailyIntakeTabBar" destination="VSa-ua-QVe" id="Zts-ux-zfh"/>
+                        <outlet property="dailyIntakeTableViewBottomConstraint" destination="rmg-xQ-ylC" id="u77-Rw-rZn"/>
                         <segue destination="hMk-b1-bLN" kind="show" identifier="goto_settings" id="aI4-fp-haw"/>
                         <segue destination="afa-13-FZ0" kind="show" identifier="goto_calculator" id="I2o-J2-ptg"/>
                         <segue destination="HWs-kL-kL7" kind="show" identifier="goto_editFood" id="rNc-EA-caT"/>

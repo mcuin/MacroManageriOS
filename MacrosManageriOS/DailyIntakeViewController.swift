@@ -16,6 +16,7 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
     @IBOutlet weak var dailyFoodTableView: UITableView!
     @IBOutlet weak var dailyIntakeTabBar: UITabBar!
     @IBOutlet weak var dailyIntakeAdBannerView: GADBannerView!
+    @IBOutlet weak var dailyIntakeTableViewBottomConstraint: NSLayoutConstraint!
     
     let macros = ["Calories", "Carbohydrates", "Fats", "Protein"]
     var adsActive = false
@@ -46,11 +47,10 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
             dailyIntakeAdBannerView.rootViewController = self
             dailyIntakeAdBannerView.load(request)
         } else {
-            dailyIntakeAdBannerView.isHidden = true
-            dailyIntakeAdBannerView.removeFromSuperview()
-            dailyFoodTableView.frame = CGRect(x: dailyFoodTableView.frame.minX, y: dailyFoodTableView.frame.midY, width: UIScreen.main.bounds.width, height: dailyFoodTableView.frame.height + 50)
-            //self.view.addSubview(dailyFoodTableView)
-            dailyFoodTableView.backgroundColor = UIColor.blue
+            
+            self.view.removeConstraint(dailyIntakeTableViewBottomConstraint)
+            let tableBottomConstraint = NSLayoutConstraint(item: dailyFoodTableView, attribute: .bottom, relatedBy: .equal, toItem: dailyIntakeTabBar, attribute: .top, multiplier: 1.0, constant: 0)
+            self.view.addConstraint(tableBottomConstraint)
         }
         
         dailyIntakeTabBar.delegate = self
