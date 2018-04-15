@@ -34,6 +34,8 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         // Do any additional setup after loading the view, typically from a nib.
         
         NotificationCenter.default.addObserver(self, selector: #selector(clearCurrentDaily), name: .NSCalendarDayChanged, object: nil)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +51,8 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         } else {
             
             self.view.removeConstraint(dailyIntakeTableViewBottomConstraint)
-            let tableBottomConstraint = NSLayoutConstraint(item: dailyFoodTableView, attribute: .bottom, relatedBy: .equal, toItem: dailyIntakeTabBar, attribute: .top, multiplier: 1.0, constant: 0)
-            self.view.addConstraint(tableBottomConstraint)
+            dailyIntakeTableViewBottomConstraint = NSLayoutConstraint(item: dailyFoodTableView, attribute: .bottom, relatedBy: .equal, toItem: dailyIntakeTabBar, attribute: .top, multiplier: 1.0, constant: 0)
+            self.view.addConstraint(dailyIntakeTableViewBottomConstraint)
         }
         
         dailyIntakeTabBar.delegate = self
