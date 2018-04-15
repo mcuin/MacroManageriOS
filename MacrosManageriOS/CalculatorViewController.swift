@@ -6,6 +6,7 @@
 //  Copyright © 2017 Mykal Cuin. All rights reserved.
 //
 
+import GoogleMobileAds
 import Foundation
 import UIKit
 
@@ -13,6 +14,8 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     
     @IBOutlet weak var calculatorScrollView: UIScrollView!
     @IBOutlet weak var navTabBar: UITabBar!
+    @IBOutlet weak var calcualtorBannerView: GADBannerView!
+    var showAd = true
     
     var previousView: UIView!
     var weightTextView: UITextView!
@@ -180,7 +183,13 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
         
         super.viewWillAppear(animated)
         
-       
+        if (showAd) {
+            let request = GADRequest()
+            request.testDevices = ["kGADSimulatorID"]
+            calcualtorBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            calcualtorBannerView.rootViewController = self
+            calcualtorBannerView.load(request)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

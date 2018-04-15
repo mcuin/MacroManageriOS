@@ -527,8 +527,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3r5-O8-5rV">
-                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="591"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeF-Jy-6gn" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="679" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YWi-z5-mbj"/>
+                                </constraints>
+                            </view>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLv-03-grX">
                                 <rect key="frame" x="0.0" y="729" width="375" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -542,15 +549,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3r5-O8-5rV" secondAttribute="trailing" id="5Ze-hG-os8"/>
+                            <constraint firstAttribute="trailing" secondItem="jLv-03-grX" secondAttribute="trailing" id="6bV-Nv-nBE"/>
+                            <constraint firstAttribute="bottom" secondItem="jLv-03-grX" secondAttribute="bottom" id="Fft-gK-8JG"/>
                             <constraint firstItem="3r5-O8-5rV" firstAttribute="top" secondItem="4ew-bX-A7x" secondAttribute="bottom" id="MC8-Vg-0cf"/>
-                            <constraint firstItem="3r5-O8-5rV" firstAttribute="leading" secondItem="jLv-03-grX" secondAttribute="leading" id="Nl7-jH-cOG"/>
-                            <constraint firstItem="jLv-03-grX" firstAttribute="top" secondItem="3r5-O8-5rV" secondAttribute="bottom" id="T7j-D8-84l"/>
-                            <constraint firstItem="jLv-03-grX" firstAttribute="bottom" secondItem="O58-hJ-At3" secondAttribute="top" constant="34" id="U0v-Kw-3qG"/>
-                            <constraint firstItem="3r5-O8-5rV" firstAttribute="trailing" secondItem="jLv-03-grX" secondAttribute="trailing" id="bKd-nC-8lC"/>
+                            <constraint firstItem="BeF-Jy-6gn" firstAttribute="top" secondItem="3r5-O8-5rV" secondAttribute="bottom" id="abL-BP-Lhy"/>
+                            <constraint firstAttribute="trailing" secondItem="BeF-Jy-6gn" secondAttribute="trailing" id="gc5-m4-Pmw"/>
+                            <constraint firstItem="BeF-Jy-6gn" firstAttribute="leading" secondItem="yLb-ci-AkB" secondAttribute="leading" id="gjs-H4-5dl"/>
                             <constraint firstItem="3r5-O8-5rV" firstAttribute="leading" secondItem="yLb-ci-AkB" secondAttribute="leading" id="jJb-Ao-Hrr"/>
+                            <constraint firstItem="jLv-03-grX" firstAttribute="top" secondItem="BeF-Jy-6gn" secondAttribute="bottom" id="rhh-SB-oEN"/>
+                            <constraint firstItem="jLv-03-grX" firstAttribute="leading" secondItem="yLb-ci-AkB" secondAttribute="leading" id="vib-PS-e31"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calcualtorBannerView" destination="BeF-Jy-6gn" id="ZcB-sX-Ls0"/>
                         <outlet property="calculatorScrollView" destination="3r5-O8-5rV" id="UoY-Rp-nCy"/>
                         <outlet property="navTabBar" destination="jLv-03-grX" id="caY-GZ-aR1"/>
                         <segue destination="hMk-b1-bLN" kind="show" identifier="goto_settings" id="t6h-cb-2C5"/>
@@ -719,7 +730,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aI4-fp-haw"/>
+        <segue reference="t6h-cb-2C5"/>
         <segue reference="rNc-EA-caT"/>
     </inferredMetricsTieBreakers>
 </document>
