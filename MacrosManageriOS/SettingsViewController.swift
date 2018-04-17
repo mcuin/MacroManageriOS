@@ -5,7 +5,7 @@
 //  Created by Mykal Cuin on 8/28/17.
 //  Copyright © 2017 Mykal Cuin. All rights reserved.
 //
-
+import GoogleMobileAds
 import Foundation
 import UIKit
 
@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var birthdayDisplayLabel: UILabel!
     @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var settingsBannerView: GADBannerView!
+    @IBOutlet weak var settingsTableBottomConstraint: NSLayoutConstraint!
     
     var feetTextField: UITextField!
     var feetTextView: UITextView!
@@ -20,6 +22,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var inchesTextView: UITextView!
     var cmTextField: UITextField!
     var cmTextView: UITextView!
+    var showAds = true
     
     let settingsArray = ["Birthdate", "Gender", "Weight Measurement", "Height Measurement"]
     
@@ -114,6 +117,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 break
             }
+        }
+        
+        if (showAds) {
+            let request = GADRequest()
+            request.testDevices = ["kGADSimulatorID"]
+            settingsBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+            settingsBannerView.rootViewController = self
+            settingsBannerView.load(request)
         }
         
     }

@@ -588,11 +588,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N5z-Zf-h8F">
-                                <rect key="frame" x="0.0" y="88" width="375" height="277"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="591"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="277" id="zBY-d2-hfy"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" id="Zbf-DD-XYD">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
@@ -604,6 +601,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPq-dn-R0o" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="679" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4cO-3h-fax"/>
+                                </constraints>
+                            </view>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rlP-pI-Kyk">
                                 <rect key="frame" x="0.0" y="729" width="375" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -616,15 +620,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CPq-dn-R0o" secondAttribute="trailing" id="8Bo-5q-3fQ"/>
+                            <constraint firstItem="rlP-pI-Kyk" firstAttribute="top" secondItem="CPq-dn-R0o" secondAttribute="bottom" id="8D8-JX-OPo"/>
+                            <constraint firstItem="CPq-dn-R0o" firstAttribute="leading" secondItem="00g-Qz-iRQ" secondAttribute="leading" id="KUM-ff-hP1"/>
+                            <constraint firstAttribute="trailing" secondItem="rlP-pI-Kyk" secondAttribute="trailing" id="LMI-yT-cNi"/>
                             <constraint firstItem="N5z-Zf-h8F" firstAttribute="leading" secondItem="00g-Qz-iRQ" secondAttribute="leading" id="Otc-7R-FB9"/>
-                            <constraint firstItem="N5z-Zf-h8F" firstAttribute="leading" secondItem="rlP-pI-Kyk" secondAttribute="leading" id="Sfh-z5-3sb"/>
-                            <constraint firstItem="N5z-Zf-h8F" firstAttribute="trailing" secondItem="rlP-pI-Kyk" secondAttribute="trailing" id="Ycq-fK-yPU"/>
+                            <constraint firstAttribute="bottom" secondItem="rlP-pI-Kyk" secondAttribute="bottom" id="cYy-sA-UJe"/>
                             <constraint firstItem="N5z-Zf-h8F" firstAttribute="top" secondItem="36L-Ng-VIU" secondAttribute="bottom" id="dT1-Fz-X5I"/>
+                            <constraint firstItem="CPq-dn-R0o" firstAttribute="top" secondItem="N5z-Zf-h8F" secondAttribute="bottom" id="h1G-oo-L7E"/>
+                            <constraint firstItem="rlP-pI-Kyk" firstAttribute="leading" secondItem="00g-Qz-iRQ" secondAttribute="leading" id="jQx-za-Y4u"/>
                             <constraint firstAttribute="trailing" secondItem="N5z-Zf-h8F" secondAttribute="trailing" id="kx0-yS-lgu"/>
-                            <constraint firstItem="rlP-pI-Kyk" firstAttribute="bottom" secondItem="qQM-CE-bfk" secondAttribute="top" constant="34" id="mWd-w9-dCO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="settingsBannerView" destination="CPq-dn-R0o" id="1TS-85-zuW"/>
+                        <outlet property="settingsTableBottomConstraint" destination="h1G-oo-L7E" id="aW1-3P-wb5"/>
                         <outlet property="settingsTableView" destination="N5z-Zf-h8F" id="5fn-bC-UaB"/>
                         <segue destination="YBY-b8-Ska" kind="show" identifier="goto_genderMeasure" id="78E-zW-DwI"/>
                         <segue destination="BKe-Ys-9NW" kind="show" identifier="goto_weightMeasure" id="ENb-uN-Era"/>
@@ -634,7 +644,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFq-T3-BO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675.625" y="509.15492957746477"/>
+            <point key="canvasLocation" x="2674.4000000000001" y="509.11330049261085"/>
         </scene>
         <!--Gender Table View Controller-->
         <scene sceneID="8bk-Sc-yXn">
