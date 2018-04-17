@@ -15,7 +15,8 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     @IBOutlet weak var calculatorScrollView: UIScrollView!
     @IBOutlet weak var navTabBar: UITabBar!
     @IBOutlet weak var calcualtorBannerView: GADBannerView!
-    var showAd = true
+    @IBOutlet weak var calculatorScrollViewBottomConstaint: NSLayoutConstraint!
+    var showAd = false
     
     var previousView: UIView!
     var weightTextView: UITextView!
@@ -189,6 +190,11 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
             calcualtorBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
             calcualtorBannerView.rootViewController = self
             calcualtorBannerView.load(request)
+        } else {
+            self.view.removeConstraint(calculatorScrollViewBottomConstaint)
+            calculatorScrollViewBottomConstaint = NSLayoutConstraint(item: calculatorScrollView, attribute: .bottom, relatedBy: .equal, toItem: navTabBar, attribute: .top, multiplier: 1.0, constant: 0)
+            self.view.addConstraint(calculatorScrollViewBottomConstaint)
+            //calcualtorBannerView.removeFromSuperview()
         }
     }
     

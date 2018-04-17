@@ -563,6 +563,7 @@
                     <connections>
                         <outlet property="calcualtorBannerView" destination="BeF-Jy-6gn" id="ZcB-sX-Ls0"/>
                         <outlet property="calculatorScrollView" destination="3r5-O8-5rV" id="UoY-Rp-nCy"/>
+                        <outlet property="calculatorScrollViewBottomConstaint" destination="abL-BP-Lhy" id="5lf-B4-P9I"/>
                         <outlet property="navTabBar" destination="jLv-03-grX" id="caY-GZ-aR1"/>
                         <segue destination="hMk-b1-bLN" kind="show" identifier="goto_settings" id="t6h-cb-2C5"/>
                         <segue destination="jtL-bt-nkj" kind="show" identifier="goto_dailyActivityLevel" id="zwN-0N-0Ky"/>

@@ -53,6 +53,7 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
             self.view.removeConstraint(dailyIntakeTableViewBottomConstraint)
             dailyIntakeTableViewBottomConstraint = NSLayoutConstraint(item: dailyFoodTableView, attribute: .bottom, relatedBy: .equal, toItem: dailyIntakeTabBar, attribute: .top, multiplier: 1.0, constant: 0)
             self.view.addConstraint(dailyIntakeTableViewBottomConstraint)
+            //dailyIntakeAdBannerView.removeFromSuperview()
         }
         
         dailyIntakeTabBar.delegate = self
@@ -223,8 +224,11 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
             UserDefaults.standard.set(food, forKey: "dailyFoods")
         }
         
-        dailyIntakeCollectionView.reloadData()
-        dailyFoodTableView.reloadData()
+        DispatchQueue.main.async {
+            self.dailyIntakeCollectionView.reloadData()
+            self.dailyFoodTableView.reloadData()
+        }
+        
     }
 }
 
