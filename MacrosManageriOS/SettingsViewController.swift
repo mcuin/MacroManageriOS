@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var settingsBannerView: GADBannerView!
     @IBOutlet weak var settingsTableBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var settingsTabbar: UITabBar!
     
     var feetTextField: UITextField!
     var feetTextView: UITextView!
@@ -22,7 +23,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     var inchesTextView: UITextView!
     var cmTextField: UITextField!
     var cmTextView: UITextView!
-    var showAds = true
+    var showAds = false
     
     let settingsArray = ["Birthdate", "Gender", "Weight Measurement", "Height Measurement"]
     
@@ -125,6 +126,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             settingsBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
             settingsBannerView.rootViewController = self
             settingsBannerView.load(request)
+        } else {
+            
+            self.view.removeConstraint(settingsTableBottomConstraint)
+            settingsTableBottomConstraint = NSLayoutConstraint(item: settingsTableView, attribute: .bottom, relatedBy: .equal, toItem: settingsTabbar, attribute: .top, multiplier: 1.0, constant: 0)
+            self.view.addConstraint(settingsTableBottomConstraint)
         }
         
     }

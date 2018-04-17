@@ -634,6 +634,7 @@
                     </view>
                     <connections>
                         <outlet property="settingsBannerView" destination="CPq-dn-R0o" id="1TS-85-zuW"/>
+                        <outlet property="settingsTabbar" destination="rlP-pI-Kyk" id="1RO-WV-8VL"/>
                         <outlet property="settingsTableBottomConstraint" destination="h1G-oo-L7E" id="aW1-3P-wb5"/>
                         <outlet property="settingsTableView" destination="N5z-Zf-h8F" id="5fn-bC-UaB"/>
                         <segue destination="YBY-b8-Ska" kind="show" identifier="goto_genderMeasure" id="78E-zW-DwI"/>
