@@ -18,6 +18,7 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
     @IBOutlet weak var calculatorScrollViewBottomConstaint: NSLayoutConstraint!
     var showAd = false
     
+    let dailyIntakeViewController = DailyIntakeViewController()
     var previousView: UIView!
     var weightTextView: UITextView!
     var poundsTextField: UITextField!
@@ -441,6 +442,8 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                         carbsTextView.text! = "Carbs: \(UserDefaults.standard.value(forKey: "carbs")!)g"
                         fatsTextView.text! = "Fats: \(UserDefaults.standard.value(forKey: "fat")!)g"
                         proteinTextView.text! = "Protein: \(UserDefaults.standard.value(forKey: "protein")!)g"
+                        
+                        NotificationCenter.default.post(name: Notification.Name("reloadMacros"), object: nil)
                     }
                 }
             }

@@ -34,7 +34,7 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
         // Do any additional setup after loading the view, typically from a nib.
         
         NotificationCenter.default.addObserver(self, selector: #selector(clearCurrentDaily), name: .NSCalendarDayChanged, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadMacros(reloadNotification:)), name: NSNotification.Name(rawValue: "reloadMacros"), object: nil)
         
     }
     
@@ -229,6 +229,10 @@ class DailyIntakeViewController: UIViewController, UITabBarDelegate, UICollectio
             self.dailyFoodTableView.reloadData()
         }
         
+    }
+    
+    @objc func reloadMacros(reloadNotification: Notification) {
+        dailyIntakeCollectionView.reloadData()
     }
 }
 
