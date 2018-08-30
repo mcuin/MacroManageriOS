@@ -444,6 +444,8 @@ class CalculatorViewController: UIViewController, UITabBarDelegate, UITableViewD
                         proteinTextView.text! = "Protein: \(UserDefaults.standard.value(forKey: "protein")!)g"
                         
                         NotificationCenter.default.post(name: Notification.Name("reloadMacros"), object: nil)
+                        
+                        self.navigationController?.popViewController(animated: true)
                     }
                 }
             }

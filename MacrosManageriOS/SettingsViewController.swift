@@ -211,7 +211,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 UserDefaults.standard.set(Double(inchesTextField.text!), forKey: "inches")
                 let cm: Double = (UserDefaults.standard.value(forKey: "feet") as! Double * 30.48) + (UserDefaults.standard.value(forKey: "inches") as! Double * 2.54)
                 UserDefaults.standard.set(cm, forKey: "cm")
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
                 
             }
         case 1:
@@ -239,7 +239,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 UserDefaults.standard.set(feet, forKey: "feet")
                 UserDefaults.standard.set(inches, forKey: "inches")
-                self.dismiss(animated: true, completion: nil)
+                self.navigationController?.popViewController(animated: true)
             }
         default:
             
