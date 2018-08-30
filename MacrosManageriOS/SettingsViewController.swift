@@ -128,9 +128,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             settingsBannerView.load(request)
         } else {
             
-            self.view.removeConstraint(settingsTableBottomConstraint)
+            /*self.view.removeConstraint(settingsTableBottomConstraint)
             settingsTableBottomConstraint = NSLayoutConstraint(item: settingsTableView, attribute: .bottom, relatedBy: .equal, toItem: settingsTabbar, attribute: .top, multiplier: 1.0, constant: 0)
-            self.view.addConstraint(settingsTableBottomConstraint)
+            self.view.addConstraint(settingsTableBottomConstraint)*/
         }
         
     }

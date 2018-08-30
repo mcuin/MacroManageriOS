@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mMo-Jq-uMX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mMo-Jq-uMX">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -588,8 +588,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="N5z-Zf-h8F">
-                                <rect key="frame" x="0.0" y="88" width="375" height="591"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="232"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="qSt-iK-0u8"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" id="Zbf-DD-XYD">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
@@ -627,7 +630,6 @@
                             <constraint firstItem="N5z-Zf-h8F" firstAttribute="leading" secondItem="00g-Qz-iRQ" secondAttribute="leading" id="Otc-7R-FB9"/>
                             <constraint firstAttribute="bottom" secondItem="rlP-pI-Kyk" secondAttribute="bottom" id="cYy-sA-UJe"/>
                             <constraint firstItem="N5z-Zf-h8F" firstAttribute="top" secondItem="36L-Ng-VIU" secondAttribute="bottom" id="dT1-Fz-X5I"/>
-                            <constraint firstItem="CPq-dn-R0o" firstAttribute="top" secondItem="N5z-Zf-h8F" secondAttribute="bottom" id="h1G-oo-L7E"/>
                             <constraint firstItem="rlP-pI-Kyk" firstAttribute="leading" secondItem="00g-Qz-iRQ" secondAttribute="leading" id="jQx-za-Y4u"/>
                             <constraint firstAttribute="trailing" secondItem="N5z-Zf-h8F" secondAttribute="trailing" id="kx0-yS-lgu"/>
                         </constraints>
@@ -635,7 +637,6 @@
                     <connections>
                         <outlet property="settingsBannerView" destination="CPq-dn-R0o" id="1TS-85-zuW"/>
                         <outlet property="settingsTabbar" destination="rlP-pI-Kyk" id="1RO-WV-8VL"/>
-                        <outlet property="settingsTableBottomConstraint" destination="h1G-oo-L7E" id="aW1-3P-wb5"/>
                         <outlet property="settingsTableView" destination="N5z-Zf-h8F" id="5fn-bC-UaB"/>
                         <segue destination="YBY-b8-Ska" kind="show" identifier="goto_genderMeasure" id="78E-zW-DwI"/>
                         <segue destination="BKe-Ys-9NW" kind="show" identifier="goto_weightMeasure" id="ENb-uN-Era"/>
