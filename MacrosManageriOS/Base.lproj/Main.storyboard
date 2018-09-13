@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -214,6 +215,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibB-Nh-Knp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1624.8" y="167.73399014778326"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bBi-6k-ABB">
+            <objects>
+                <viewController id="1Qt-FR-aUv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t8p-rB-wM8"/>
+                        <viewControllerLayoutGuide type="bottom" id="QHy-0n-w2a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Oh-3M-Ijc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meA-FI-Ez6">
+                                <rect key="frame" x="16" y="406" width="343" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Uou-eO-r9j"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcL-th-iLF">
+                                <rect key="frame" x="16" y="364.66666666666669" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5t3-bd-htF">
+                                <rect key="frame" x="16" y="311" width="160" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cs-vm-tTZ">
+                                <rect key="frame" x="199" y="311" width="160" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueA-jz-FYR">
+                                <rect key="frame" x="16" y="418.66666666666669" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-hn-nk5">
+                                <rect key="frame" x="16" y="472" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYQ-3e-ZpN">
+                                <rect key="frame" x="16" y="525" width="343" height="50"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TYQ-3e-ZpN" firstAttribute="width" secondItem="2Oh-3M-Ijc" secondAttribute="height" multiplier="49:116" constant="0.33000000000000002" id="2jr-pC-SEE"/>
+                            <constraint firstItem="5t3-bd-htF" firstAttribute="leading" secondItem="meA-FI-Ez6" secondAttribute="leading" id="3xW-iw-30Y"/>
+                            <constraint firstItem="5t3-bd-htF" firstAttribute="leading" secondItem="hcL-th-iLF" secondAttribute="leading" id="7MI-iu-FBD"/>
+                            <constraint firstItem="ueA-jz-FYR" firstAttribute="top" secondItem="meA-FI-Ez6" secondAttribute="bottom" constant="11.5" id="9EN-jy-1MG"/>
+                            <constraint firstItem="ueA-jz-FYR" firstAttribute="trailing" secondItem="meA-FI-Ez6" secondAttribute="trailing" id="E4x-Wo-MY6"/>
+                            <constraint firstItem="bgN-hn-nk5" firstAttribute="trailing" secondItem="meA-FI-Ez6" secondAttribute="trailing" id="EVH-vj-beu"/>
+                            <constraint firstItem="0cs-vm-tTZ" firstAttribute="leading" secondItem="5t3-bd-htF" secondAttribute="trailing" constant="23" id="EVV-wf-sGF"/>
+                            <constraint firstItem="0cs-vm-tTZ" firstAttribute="trailing" secondItem="meA-FI-Ez6" secondAttribute="trailing" id="IBB-kj-4wE"/>
+                            <constraint firstItem="bgN-hn-nk5" firstAttribute="leading" secondItem="meA-FI-Ez6" secondAttribute="leading" id="IGf-83-Flu"/>
+                            <constraint firstItem="hcL-th-iLF" firstAttribute="top" secondItem="0cs-vm-tTZ" secondAttribute="bottom" constant="23" id="Kdg-i9-zzZ"/>
+                            <constraint firstItem="TYQ-3e-ZpN" firstAttribute="centerX" secondItem="2Oh-3M-Ijc" secondAttribute="centerX" id="LRh-Ng-JNg"/>
+                            <constraint firstItem="5t3-bd-htF" firstAttribute="width" secondItem="0cs-vm-tTZ" secondAttribute="width" id="LjC-tJ-hKy"/>
+                            <constraint firstItem="TYQ-3e-ZpN" firstAttribute="top" secondItem="bgN-hn-nk5" secondAttribute="bottom" constant="23" id="Nc9-Bh-SUN"/>
+                            <constraint firstItem="meA-FI-Ez6" firstAttribute="top" secondItem="hcL-th-iLF" secondAttribute="bottom" constant="11.5" id="Osc-Un-eQm"/>
+                            <constraint firstItem="meA-FI-Ez6" firstAttribute="centerX" secondItem="2Oh-3M-Ijc" secondAttribute="centerX" id="QMo-lc-xjX"/>
+                            <constraint firstItem="bgN-hn-nk5" firstAttribute="top" secondItem="ueA-jz-FYR" secondAttribute="bottom" constant="23" id="T2G-mS-vdz"/>
+                            <constraint firstItem="hcL-th-iLF" firstAttribute="trailing" secondItem="meA-FI-Ez6" secondAttribute="trailing" id="d81-p6-W4H"/>
+                            <constraint firstItem="hcL-th-iLF" firstAttribute="top" secondItem="5t3-bd-htF" secondAttribute="bottom" constant="23" id="iae-vn-D2K"/>
+                            <constraint firstItem="meA-FI-Ez6" firstAttribute="centerY" secondItem="2Oh-3M-Ijc" secondAttribute="centerY" id="ji1-1n-qJw"/>
+                            <constraint firstItem="meA-FI-Ez6" firstAttribute="leading" secondItem="2Oh-3M-Ijc" secondAttribute="leadingMargin" id="pge-9h-AYg"/>
+                            <constraint firstItem="5t3-bd-htF" firstAttribute="leading" secondItem="ueA-jz-FYR" secondAttribute="leading" id="t01-vm-rUC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="meA-FI-Ez6" secondAttribute="trailing" id="yc0-Z3-Wai"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icN-Ck-pxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765.60000000000002" y="-506.1576354679803"/>
         </scene>
         <!--Add Food View Controller-->
         <scene sceneID="7NI-oE-YLx">
@@ -642,6 +728,7 @@
                         <segue destination="BKe-Ys-9NW" kind="show" identifier="goto_weightMeasure" id="ENb-uN-Era"/>
                         <segue destination="ngO-uu-rbU" kind="show" identifier="goto_heightMeasure" id="kUi-uf-3Ca"/>
                         <segue destination="BMe-SD-b53" kind="show" identifier="goto_birthDateMeasure" id="ojp-aP-Dok"/>
+                        <segue destination="1Qt-FR-aUv" kind="show" id="Cy9-l8-iGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFq-T3-BO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
