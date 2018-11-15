@@ -245,5 +245,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             break
         }
+        
+        self.performSegue(withIdentifier: "goto_signUp", sender: self)
     }
 }

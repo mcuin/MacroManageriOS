@@ -265,6 +265,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYQ-3e-ZpN">
                                 <rect key="frame" x="16" y="524" width="343" height="50"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="signUpButtonAction:" destination="1Qt-FR-aUv" eventType="touchUpInside" id="Pqb-t8-sc2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -733,7 +736,7 @@
                         <segue destination="BKe-Ys-9NW" kind="show" identifier="goto_weightMeasure" id="ENb-uN-Era"/>
                         <segue destination="ngO-uu-rbU" kind="show" identifier="goto_heightMeasure" id="kUi-uf-3Ca"/>
                         <segue destination="BMe-SD-b53" kind="show" identifier="goto_birthDateMeasure" id="ojp-aP-Dok"/>
-                        <segue destination="1Qt-FR-aUv" kind="show" id="Cy9-l8-iGA"/>
+                        <segue destination="1Qt-FR-aUv" kind="show" identifier="goto_signUp" id="Cy9-l8-iGA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFq-T3-BO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -835,7 +838,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aI4-fp-haw"/>
+        <segue reference="t6h-cb-2C5"/>
         <segue reference="rNc-EA-caT"/>
     </inferredMetricsTieBreakers>
 </document>
