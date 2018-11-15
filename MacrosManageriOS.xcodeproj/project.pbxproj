@@ -15,6 +15,7 @@
 		DB08E8E51F51C7F7007EC05D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB08E8E31F51C7F7007EC05D /* LaunchScreen.storyboard */; };
 		DB92742B1F7EB7E700165DF0 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */; };
 		DBAAF9B2219D036E00539A5E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAAF9B1219D036E00539A5E /* SignUpViewController.swift */; };
+		DBAAF9B4219D1C2900539A5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBAAF9B3219D1C2900539A5E /* GoogleService-Info.plist */; };
 		DBAB1BD4204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB1BD3204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift */; };
 		DBAB1BD6204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB1BD5204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift */; };
 		DBB7C2C81F547B010039E7C5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */; };
@@ -40,6 +41,7 @@
 		DB08E8E61F51C7F7007EC05D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB92742A1F7EB7E700165DF0 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		DBAAF9B1219D036E00539A5E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DBAAF9B3219D1C2900539A5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBAB1BD3204E018B0016FFD1 /* DailyIntakeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntakeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DBAB1BD5204F4E7D0016FFD1 /* DailyFoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFoodTableViewCell.swift; sourceTree = "<group>"; };
 		DBB7C2C71F547B010039E7C5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		DB08E8D91F51C7F7007EC05D /* MacrosManageriOS */ = {
 			isa = PBXGroup;
 			children = (
+				DBAAF9B3219D1C2900539A5E /* GoogleService-Info.plist */,
 				DB08E8DA1F51C7F7007EC05D /* AppDelegate.swift */,
 				DB08E8DC1F51C7F7007EC05D /* DailyIntakeViewController.swift */,
 				DB08E8DE1F51C7F7007EC05D /* Main.storyboard */,
@@ -139,7 +142,6 @@
 				DB08E8D41F51C7F7007EC05D /* Frameworks */,
 				DB08E8D51F51C7F7007EC05D /* Resources */,
 				FE781C248A1F3E881A31FDF7 /* [CP] Embed Pods Frameworks */,
-				5FE1DC7B4FAD194F73C4AA72 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB08E8E51F51C7F7007EC05D /* LaunchScreen.storyboard in Resources */,
+				DBAAF9B4219D1C2900539A5E /* GoogleService-Info.plist in Resources */,
 				DB08E8E21F51C7F7007EC05D /* Assets.xcassets in Resources */,
 				DB08E8E01F51C7F7007EC05D /* Main.storyboard in Resources */,
 			);
@@ -200,21 +203,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5FE1DC7B4FAD194F73C4AA72 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MacrosManageriOS/Pods-MacrosManageriOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		74981EF5FA84A996C2554F51 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,9 +227,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MacrosManageriOS/Pods-MacrosManageriOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
