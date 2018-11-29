@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -83,9 +84,25 @@ class SignUpViewController: UIViewController {
                 
                 self.present(passwordMatchAlert, animated: true, completion: nil)
             }
+        } else if signUpPasswordTextField.text!.count < 6 || signUpConfirmPasswordTextField.text!.count < 6 {
+            
+            let passwordLengthAlert = UIAlertController(title: "Password Error", message: "The entered password is too short. Please enter 6 characters.", preferredStyle: .alert)
+            passwordLengthAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            DispatchQueue.main.async {
+                
+                self.present(passwordLengthAlert, animated: true, completion: nil)
+            }
         } else {
             
-            print("Sign up working")
+            Auth.auth().createUser(withEmail: signUpEmailTextField.text!, password: signUpConfirmPasswordTextField.text!, completion: { (authResult, error) in
+                if error == nil {
+                    guard let user = authResult?.uid else {return}
+                    print("Uid \(user)")
+                    
+                }
+                
+            })
         }
     }
     
