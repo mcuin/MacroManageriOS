@@ -272,6 +272,8 @@ class SignUpViewController: UIViewController {
                         } else {
                             
                             print("Sign up success")
+                            
+                            self.navigationController?.popViewController(animated: true)
                         }
                     }
                     
